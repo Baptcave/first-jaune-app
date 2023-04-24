@@ -6,7 +6,8 @@ const app = express();
 const dataSource = new typeorm.DataSource({
   type: "sqlite",
   database: "./wildersdb.sqlite",
-  synchronise: true,
+  synchronize: true,
+  entities: [require("./entity/Wilder")],
 });
 
 app.get("/", (req, res) => {
